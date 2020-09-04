@@ -372,4 +372,4 @@ def test () :
     return df.sort_values('number_of_posts', ascending=False).head(20)
 
 if __name__ == "__main__" : 
-    test()
+    print(test())
