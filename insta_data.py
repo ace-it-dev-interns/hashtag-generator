@@ -1,7 +1,6 @@
 import datetime
 import requests
 import json
-import pandas as pd
 
 
 def getCreds():
