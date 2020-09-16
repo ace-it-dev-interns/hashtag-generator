@@ -343,10 +343,8 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 		outer_index += 1
 	return hashtag_info
 
-def test () :
-    params = getCreds()
+def getHashtagList (hashtagInfo) :
     
-    hashtag_info = getHashtagInfo( 'tutoring', params )
     hashtag_id = hashtag_info['json_data']['data'][0]['id']
     
     top_response, recent_response = getHashtagMediaAll(hashtag_id, params)
@@ -371,4 +369,4 @@ def test () :
     return df.sort_values('number_of_posts', ascending=False).head(20)
 
 if __name__ == "__main__" : 
-    print(test())
+    print(getHashtagList())
