@@ -234,10 +234,6 @@ def compilePostData ( like_counts, comment_counts, media_captions, media_hashtag
 	"""
 		Creates a list of dictionaries that each represent a single ID and contain related hashtags and pertinent metrics
 	"""
-	# like_counts = getMediaLikeCount()
-	# comment_counts = getMediaCommentCount()
-	# media_captions = getMediaCaptions()
-	# media_hashtags = getRelatedHashtags()
  
 	ids, likes = zip(*like_counts)
 	ids, comments = zip(*comment_counts)
@@ -261,8 +257,6 @@ def getLikeTotals ( related_hashtags, list_of_dictionaries ) :
 	"""
 		Creates a nested list containing like totals for each individual hashtag on a piece of related media
 	"""
-	# related_hashtags = getRelatedHashtags()
-	# list_of_dictionaries = compilePostData()
 	
 	ids, lists_of_hashtags = zip(*related_hashtags)
 	aggregated_like_counts = []
@@ -281,8 +275,6 @@ def getCommentTotals ( related_hashtags, list_of_dictionaries ) :
 	"""
 		Creates a nested list containing comment totals for each individual hashtag on a piece of related media
 	"""
-	# related_hashtags = getRelatedHashtags()
-	# list_of_dictionaries = compilePostData()
 	
 	ids, lists_of_hashtags = zip(*related_hashtags)
 	aggregated_comment_counts = []
@@ -301,9 +293,7 @@ def getNumberOfPosts ( related_hashtags, list_of_dictionaries ) :
 	"""
 		Creates a nested list containing number of posts for each individual hashtag on a piece of related media
 	"""
-	# related_hashtags = getRelatedHashtags()
-	# list_of_dictionaries = compilePostData()
-	
+
 	ids, lists_of_hashtags = zip(*related_hashtags)
 	aggregated_post_counts = []
 	for list_ in lists_of_hashtags:
@@ -321,12 +311,7 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 	"""
 		Creates a nested dict with each hashtag and their respective values.			
 	"""
-	# related_hashtags = getRelatedHashtags()
-	# list_of_dictionaries = compilePostData()
-	# number_of_posts = getNumberOfPosts()
-	# total_likes = getLikeTotals()
-	# total_comments = getCommentTotals()
-	
+    
 	ids, lists_of_hashtags = zip(*related_hashtags)
 	hashtag_info = {}
 
@@ -334,7 +319,7 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 	for list_ in lists_of_hashtags:
 		inner_index = 0
 		for hashtag in list_:
-			if hashtag not in hashtag_info:  #TODO: create nested dict
+			if hashtag not in hashtag_info:  
 				hashtag_info['{}'.format(hashtag)] = {}
 				hashtag_info['{}'.format(hashtag)]['total_likes'] = total_likes[outer_index][inner_index]
 				hashtag_info['{}'.format(hashtag)]['total_comments'] = total_comments[outer_index][inner_index]
@@ -366,7 +351,7 @@ def getHashtagList (hashtagInfo) :
     df['avg_engagement'] = (df['total_likes'] + df['total_comments']) / df['number_of_posts']
     
     
-    return df.sort_values('number_of_posts', ascending=False).head(20)
+    return df.sort_values('number_of_posts', ascending=False).head(30)
 
 if __name__ == "__main__" : 
     print(getHashtagList())
