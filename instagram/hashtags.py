@@ -328,7 +328,7 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 		outer_index += 1
 	return hashtag_info
 
-def getHashtagList (hashtagInfo) :
+def getHashtagList (hashtag_info) :
     
     hashtag_id = hashtag_info['json_data']['data'][0]['id']
     
