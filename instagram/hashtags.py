@@ -328,9 +328,10 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 		outer_index += 1
 	return hashtag_info
 
-def getHashtagList (params) :
-    
-    hashtag_id = params['json_data']['data'][0]['id']
+def getHashtagList ( hashtag, n=30 ) :
+    params = getCreds()
+    hashtag_info = getHashtagInfo( hashtag, params )
+    hashtag_id = hashtag_info['json_data']['data'][0]['id']
     
     top_response, recent_response = getHashtagMediaAll(hashtag_id, params)
     
@@ -351,7 +352,8 @@ def getHashtagList (params) :
     df['avg_engagement'] = (df['total_likes'] + df['total_comments']) / df['number_of_posts']
     
     
-    return df.sort_values('number_of_posts', ascending=False).head(30)
+    return df.sort_values('number_of_posts', ascending=False).head(n)
 
 if __name__ == "__main__" : 
-    print(getHashtagList())
+    print(getHashtagList('blogger'))
+
