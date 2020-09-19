@@ -328,9 +328,9 @@ def compileHashtagData ( related_hashtags, list_of_dictionaries, number_of_posts
 		outer_index += 1
 	return hashtag_info
 
-def getHashtagList (hashtag_info) :
+def getHashtagList (params) :
     
-    hashtag_id = hashtag_info['json_data']['data'][0]['id']
+    hashtag_id = params['json_data']['data'][0]['id']
     
     top_response, recent_response = getHashtagMediaAll(hashtag_id, params)
     
