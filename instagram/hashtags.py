@@ -12,7 +12,7 @@ def getCreds():
 	"""
 
 	creds = dict() # dictionary to hold everything
-	creds['access_token'] = 'EAAFEzPo2nKMBAEnaqLj74ZAiXIYYZAZB8RUKFmZCZAPIVzaG7eZCHOexp5v4ZAuiehn5MSzyw8NmQMhNPeRCNKKZBa5L0WTeZCZAHMHA1wyBCHK08rY3xLsyLdHlfYvSfHtHpf1abiMdZAC55qZAv8dXfQQKYT0PDNeF9UHyXiyaCjqp0AZDZD' # access token for use with all api calls
+	creds['access_token'] = 'EAAFEzPo2nKMBAHUchntP8oTdfFKxVGhxyhXTXtMdvf27qUFmYkGYibGWgZBi92RHiGIiZC68GFWQTUv5gN2ofsUWGStePVRWRQkGsppHtq2GtARHOHECZCsaSPzTZAY0H75MzyUbyXoiKdETYYFbWbnwQF0JzgAMJ93CFtNiEAZDZD' # access token for use with all api calls
 	creds['client_id'] = '357122138610851' # client id from facebook app hashtag-generator
 	creds['client_secret'] = '8a3384e6ad85e79ecea9e3b24fb8db20' # client secret from facebook app
 	creds['graph_domain'] = 'https://graph.facebook.com/' # base domain for api calls
